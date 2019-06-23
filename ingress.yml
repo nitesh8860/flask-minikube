@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: minikube-ingress
+  annotations:
+spec:
+  rules:
+  - host: one.kube.neem.dcsc.accenture.com
+    http:
+      paths:
+      - path: /random
+        backend:
+          serviceName: flask
+          servicePort: 5000
+      - path: /reverse
+        backend:
+          serviceName: flask
+          servicePort: 5000
