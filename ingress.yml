@@ -8,11 +8,15 @@ spec:
   - host: one.kube.neem.dcsc.accenture.com
     http:
       paths:
-      - path: /random
-        backend:
-          serviceName: flask
-          servicePort: 5000
       - path: /reverse
         backend:
-          serviceName: flask
+          serviceName: flask-reverse
+          servicePort: 5000
+      - path: /api
+        backend:
+          serviceName: flask-api
+          servicePort: 5000
+      - path: /random
+        backend:
+          serviceName: flask-api
           servicePort: 5000

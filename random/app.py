@@ -9,7 +9,7 @@ app = Flask(__name__)
 def rand():
     return str(random.randint(1,210000000000000000  ))
 
-@app.route('/reverse', methods=['POST'])
+@app.route('/api', methods=['POST'])
 def string_reverse():
     if not request.json:
         abort(400)
