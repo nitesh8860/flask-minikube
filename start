@@ -1,3 +1,5 @@
+./api/deploy-changes
+./reverse/deploy-changes
 kubectl apply -f api/deployment.yml
 kubectl apply -f reverse/deployment.yml
 kubectl apply -f api/service.yml

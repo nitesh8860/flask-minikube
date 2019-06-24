@@ -4,13 +4,15 @@ import requests, random, json
 
 app = Flask(__name__)
 
-
+@app.route('/random', methods=['GET'])
+def rand():
+    return str(random.randint(1,210000000000000000  ))
 
 @app.route('/api', methods=['POST'])
 def string_reverse():
     if not request.json:
         abort(400)
-    api_url = 'http://10.101.123.52:5000/reverse'
+    api_url = 'http://flask-reverse.default.svc.cluster.local:5000/reverse'
     headers = {'Content-Type': 'application/json'}
     payload = request.get_json()
     data = json.dumps(payload)

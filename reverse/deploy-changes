@@ -1,0 +1,4 @@
+docker build -t localhost:5001/flask-reverse:latest reverse/
+docker push localhost:5001/flask-reverse:latest
+kubectl delete pod `kubectl get po | grep flask-reverse | awk '{print $1}'`
+
