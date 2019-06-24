@@ -1,6 +1,4 @@
-AWS VM user data
-###
-
+# AWS VM user data for kubernetes 
 cd /opt
 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
 chmod +x ./kubectl
@@ -12,27 +10,26 @@ sudo apt-get update && \
 	
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
 
-###
-Start minikube in VM
-###
+# Cluster Setup
+Assuming you have minikube or kubernetes cluster up and running with DNS and ingress controller working. 
 
 sudo su
 minikube start --vm-driver=none
 
+# clone the repo
 
-###
-setup docker registery, app, deployment, service and ingress
-###
+# docker registery setup
 docker run -d   -p 5001:5000   --restart=always   --name registry   -v /var/registry:/var/lib/registry   registry:2
 
-docker build -t localhost:5001/flask:latest .
-docker push localhost:5001/flask:latest
+# start app
+./start
 
-kubectl apply -f deployment.yml
-kubectl apply -f service.yml
-kubectl apply -f ingress.yml
+# stop app
+./stop
 
-kubectl logs deployment/flask
+# Troubleshooting
+kubectl logs deployment/flask-api
+kubectl logs deployment/flask-reverse
 
 
 
