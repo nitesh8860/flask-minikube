@@ -2,5 +2,5 @@ kubectl delete deployment.apps/flask-api
 kubectl delete service/flask-api
 kubectl delete deployment.apps/flask-reverse
 kubectl delete service/flask-reverse
-kubectl delete minikube-ingress
+kubectl delete flask-ingress
 
