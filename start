@@ -1,0 +1,6 @@
+kubectl apply -f api/deployment.yml
+kubectl apply -f reverse/deployment.yml
+kubectl apply -f api/service.yml
+kubectl apply -f reverse/service.yml
+kubectl apply -f ingress.yml
+ 

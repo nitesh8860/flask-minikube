@@ -10,7 +10,7 @@ app = Flask(__name__)
 def string_reverse():
     if not request.json:
         abort(400)
-    api_url = 'http://10.109.211.194:5000/reverse'
+    api_url = 'http://10.101.123.52:5000/reverse'
     headers = {'Content-Type': 'application/json'}
     payload = request.get_json()
     data = json.dumps(payload)
