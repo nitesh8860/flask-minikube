@@ -1,0 +1,5 @@
+docker build -t localhost:5001/flask-api:latest .
+docker push localhost:5001/flask-api:latest
+kubectl delete pod `kubectl get po | grep api | awk '{print $1}'`
+
+

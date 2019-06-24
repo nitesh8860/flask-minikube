@@ -29,6 +29,5 @@ spec:
         image: localhost:5001/flask-api:latest
         ports:
         - containerPort: 5000
-      restartPolicy: Always
-
-
+        imagePullPolicy: "Always"
+      restartPolicy: "Always"
