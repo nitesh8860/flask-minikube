@@ -3,4 +3,5 @@ kubectl delete service/flask-api
 kubectl delete deployment.apps/flask-reverse
 kubectl delete service/flask-reverse
 kubectl delete ingress flask-ingress
+kubectl delete namespace flask
 

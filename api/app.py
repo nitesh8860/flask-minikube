@@ -12,7 +12,7 @@ def rand():
 def string_reverse():
     if not request.json:
         abort(400)
-    api_url = 'http://flask-reverse.default.svc.cluster.local:5000/reverse'
+    api_url = 'http://flask-reverse.flask.svc.cluster.local:5000/reverse'
     headers = {'Content-Type': 'application/json'}
     payload = request.get_json()
     data = json.dumps(payload)

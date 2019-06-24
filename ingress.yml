@@ -2,10 +2,11 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: flask-ingress
+  namespace: flask
   annotations:
 spec:
   rules:
-  - host: one.kube.neem.dcsc.accenture.com
+  - host: one.flask.svc.cluster.local
     http:
       paths:
       - path: /reverse

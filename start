@@ -1,3 +1,4 @@
+kubectl create namespace flask
 ./api/deploy-changes
 ./reverse/deploy-changes
 kubectl apply -f api/deployment.yml
