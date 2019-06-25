@@ -37,8 +37,9 @@ pick up the CLUSTER-IP
 `kubectl logs deployment/flask-reverse`  
 
 ## Gcloud setup
-### Build and Push your image on gcloud   
-`gcloud builds --project projectName submit --tag gcr.io/projectName/flask-api:v1 .`  
+### Build and Push your image on gcloud  
+`gcloud builds --project projectName submit --tag gcr.io/projectName/flask-reverse:v1 ./reverse/`  
+`gcloud builds --project projectName submit --tag gcr.io/projectName/flask-api:v1 ./api/`  
 Create a cluster on gcloud.  
 `kubectl apply -f deploy-gcloud-reverse.yaml`  
 `kubectl apply -f deploy-gcloud-api.yaml`  
