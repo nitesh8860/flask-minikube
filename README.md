@@ -1,9 +1,12 @@
 # Flask API with two microservices hosted on kubernetes cluster  
+
 >/reverse - { "message":"abcdefg" } → { "message":"gfedcba" }    
 >/api - { "message":"abcdefg" } → { "message":"gfedcba", "rand": 0.12345678 }    
    
 >/api endpoint delegates the message reversal task to /reverse    
-   
+
+## DEV setup  
+
 ### Cluster Setup
 Assuming you have minikube or kubernetes cluster up and running with DNS and ingress controller working.   
   
@@ -33,5 +36,13 @@ pick up the CLUSTER-IP
 `kubectl logs deployment/flask-api`  
 `kubectl logs deployment/flask-reverse`  
 
+## Gcloud setup
+### Build and Push your image on gcloud   
+`gcloud builds --project projectName submit --tag gcr.io/projectName/flask-api:v1 .`  
+Create a cluster on gcloud.  
+`kubectl apply -f deploy-gcloud-reverse.yaml`  
+`kubectl apply -f deploy-gcloud-api.yaml`  
+Get service URLs
+`kubectl get services --namespace=flask`  
 
 
