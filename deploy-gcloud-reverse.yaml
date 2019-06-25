@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: flask-reverse
-        image: localhost:5001/flask-reverse:latest
+        image: gcr.io/projectName/flask-api:v1
         ports:
         - containerPort: 5000
         imagePullPolicy: "Always"
@@ -30,4 +30,3 @@ spec:
   ports:
   - port: 5000
     targetPort: 5000
-  type: LoadBalancer

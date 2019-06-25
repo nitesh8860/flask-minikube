@@ -44,5 +44,6 @@ Create a cluster on gcloud.
 `kubectl apply -f deploy-gcloud-api.yaml`  
 Get service URLs   
 `kubectl get services --namespace=flask`  
-
+Apply Ingress post changing the hostname in ingress.yml
+`kubectl apply -f ingress.yml`  
 
