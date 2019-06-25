@@ -16,6 +16,23 @@ spec:
         ports:
         - containerPort: 5000
         imagePullPolicy: "Always"
+        livenessProbe:      # Used by deployment controller
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        readinessProbe:     # Used by Ingress/GCLB
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 3
+          periodSeconds: 5
+        resources:
+          limits:
+            memory: 1024Mi
+          requests:
+            memory: 768Mi
       restartPolicy: Always
 apiVersion: v1
 kind: Service
