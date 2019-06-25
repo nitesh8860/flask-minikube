@@ -42,7 +42,7 @@ pick up the CLUSTER-IP
 Create a cluster on gcloud.  
 `kubectl apply -f deploy-gcloud-reverse.yaml`  
 `kubectl apply -f deploy-gcloud-api.yaml`  
-Get service URLs
+Get service URLs   
 `kubectl get services --namespace=flask`  
 
 
