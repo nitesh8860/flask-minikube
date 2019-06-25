@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: flask-reverse
+  namespace: flask
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: flask-reverse
+    spec:
+      containers:
+      - name: flask-reverse
+        image: localhost:5001/flask-reverse:latest
+        ports:
+        - containerPort: 5000
+        imagePullPolicy: "Always"
+      restartPolicy: Always
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-reverse
+  namespace: flask
+  labels:
+    service: flask-reverse
+spec:
+  selector:
+    app: flask-reverse
+  ports:
+  - port: 5000
+    targetPort: 5000
+  type: LoadBalancer

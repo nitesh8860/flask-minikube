@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: flask-api
+  namespace: flask
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: flask-api
+    spec:
+      containers:
+      - name: flask-api
+        image: localhost:5001/flask-api:latest
+        ports:
+        - containerPort: 5000
+        imagePullPolicy: "Always"
+      restartPolicy: "Always"
+kind: Service
+metadata:
+  name: flask-api
+  namespace: flask
+  labels:
+    service: flask-api
+spec:
+  selector:
+    app: flask-api
+  ports:
+  - port: 5000
+    targetPort: 5000
+  type: LoadBalancer
