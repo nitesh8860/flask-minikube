@@ -54,8 +54,7 @@ I will be creating my own system diagram soon, till then, a more or less similar
 ## Continuous delivery pipeline with jenkins and Gcloud
 ![alt text](https://cloud.google.com/solutions/images/jenkins-cd-container-engine.svg "CICD pipeline with jenkins and gcloud")   
 
-here Backend - /reverse
-and Frontend - /api
+here in this diagram, Backend is /reverse and Frontend is /api services.
 
 * Avoid Downtimes with the help of Canary deployments.
 * Create seperate namespaces to deploy in development, testing and production environments.
