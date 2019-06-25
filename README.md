@@ -47,3 +47,7 @@ Get service URLs
 Apply Ingress post changing the hostname in ingress.yml
 `kubectl apply -f ingress.yml`  
 
+![alt text](https://cloud.google.com/solutions/images/creating-cicd-pipeline-with-kubernetes-engine-architecture.svg "System Diagram")   
+    
+I will be creating my own system diagram soon, till then, a more or less similar and nice diagram from GCLOUD   
+
