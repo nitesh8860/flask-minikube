@@ -47,7 +47,17 @@ Get service URLs
 Apply Ingress post changing the hostname in ingress.yml
 `kubectl apply -f ingress.yml`  
 
+I will be creating my own system diagram soon, till then, a more or less similar and nice diagram from gcloud   
 ![alt text](https://cloud.google.com/solutions/images/creating-cicd-pipeline-with-kubernetes-engine-architecture.svg "System Diagram")   
     
-I will be creating my own system diagram soon, till then, a more or less similar and nice diagram from GCLOUD   
+    
+## Continuous delivery pipeline with jenkins and Gcloud
+![alt text](https://cloud.google.com/solutions/images/jenkins-cd-container-engine.svg "CICD pipeline with jenkins and gcloud")   
+
+here Backend - /reverse
+and Frontend - /api
+
+* Avoid Downtimes with the help of Canary deployments.
+* Create seperate namespaces to deploy in development, testing and production environments.
+> [Source : Google](https://cloud.google.com/solutions/continuous-delivery-jenkins-kubernetes-engine)
 
